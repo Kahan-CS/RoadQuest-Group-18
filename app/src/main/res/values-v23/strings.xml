@@ -2,4 +2,5 @@
 <resources>
     <string name="no_account_label">Do not have an account yet?</string>
     <string name="account_exists_label">Already have an account?</string>
+    <string name="hi_welcome_to_roadquest">Hi! Welcome to RoadQuest!</string>
 </resources>
