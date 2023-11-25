@@ -19,7 +19,7 @@ class SignupScreen : AppCompatActivity() {
 
         // Debug - takes you to landing screen, delete after testing.
         val debugButton: Button = findViewById(R.id.debugButtonTemp)
-        signinButton.setOnClickListener {
+        debugButton.setOnClickListener {
             val intent = Intent(this, LandingScreen::class.java)
             startActivity(intent)
         }
