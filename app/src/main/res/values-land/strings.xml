@@ -3,4 +3,6 @@
     <string name="no_account_label">Do not have an account yet?</string>
     <string name="account_exists_label">Already have an account?</string>
     <string name="hi_welcome_to_roadquest">Hi! Welcome to RoadQuest!</string>
+    <string name="press_the_start_button_to_begin_phone_sensor_information_will_be_recorded_throughout_your_session">Press the Start button to begin. Phone sensor information will be recorded throughout your session.</string>
+    <string name="roadquest_helps_assess_your_driving_skills_choose_an_option_to_get_started">RoadQuest helps assess your driving skills. Choose an option to get started!</string>
 </resources>

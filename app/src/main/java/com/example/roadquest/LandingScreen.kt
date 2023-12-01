@@ -18,6 +18,13 @@ class LandingScreen : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // Button takes you to new screen to start a session:
+        val startSessionButton: Button = findViewById(R.id.startSession)
+        startSessionButton.setOnClickListener {
+            val intent = Intent(this, StartSessionScreen::class.java)
+            startActivity(intent)
+        }
+
 
     }
 }
