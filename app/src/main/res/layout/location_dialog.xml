@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/cardview_light_background"
+    app:cardCornerRadius="20dp"
+    android:layout_marginHorizontal="20dp">
+
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <TextView
+            android:text="Allow Location Permissions"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:gravity="center"
+            android:id="@+id/dialogLocationPermDesc"
+            android:text="RideQuest needs your permission to access your device location. It is imperative that this permission is granted for the proper functioning of the software. Failure to comply with the request will disable access to system features."
+            android:textStyle="normal"
+            android:textSize="18dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/allowBttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Allow Access"
+                android:layout_margin="5dp"
+                android:layout_marginEnd="10dp"/>
+
+            <Button
+                android:id="@+id/denyBttn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deny Access"
+                android:backgroundTint="@color/greenlight"
+                android:layout_margin="5dp"
+                android:layout_marginEnd="10dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
