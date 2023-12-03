@@ -1,0 +1,15 @@
+{
+  "name": "roadquest-nodejs",
+  "version": "1.0.0",
+  "description": "Backend for roadquest project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Kahan Desai",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
