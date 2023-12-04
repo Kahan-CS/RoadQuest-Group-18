@@ -17,7 +17,7 @@
         android:padding="20dp">
 
         <TextView
-            android:text="@string/allow_location_permissions"
+            android:text="@string/notice_dialog_resource"
             android:textStyle="bold"
             android:textSize="20sp"
             android:gravity="center"
@@ -26,8 +26,8 @@
 
         <TextView
             android:gravity="center"
-            android:id="@+id/dialogLocationPermDesc"
-            android:text="RideQuest needs your permission to access your device location. It is imperative that this permission is granted for the proper functioning of the software. Failure to comply with the request will disable access to system features."
+            android:id="@+id/finalizedSessionDesc"
+            android:text="@string/the_session_has_been_terminated_and_the_information_has_been_saved"
             android:textStyle="normal"
             android:textSize="18sp"
             android:layout_marginTop="20dp"
@@ -42,19 +42,10 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/allowBttn"
+                android:id="@+id/confirmBttn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/allow_access_bttn_txt"
-                android:layout_margin="5dp"
-                android:layout_marginEnd="10dp"/>
-
-            <Button
-                android:id="@+id/denyBttn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/deny_access_bttn_txt"
-                android:backgroundTint="@color/greenlight"
+                android:text="@string/confirm_bttn_txt"
                 android:layout_margin="5dp"
                 android:layout_marginEnd="10dp"/>
 

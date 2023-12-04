@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RoadQuest"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBxpguS_OjDkxcBxkWkk_q7geYRA9SP5z0" />
+
+        <activity
+            android:name=".SessionMainUIScreen"
+            android:exported="false" />
         <activity
             android:name=".StartSessionScreen"
             android:exported="false" />

@@ -52,6 +52,20 @@
     </string>
     <string name="press_the_start_button_to_begin_phone_sensor_information_will_be_recorded_throughout_your_session">Press the Start button to begin. Phone sensor information will be recorded throughout your session.</string>
     <string name="roadquest_helps_assess_your_driving_skills_choose_an_option_to_get_started">RoadQuest helps assess your driving skills. Choose an option to get started!</string>
+    <string name="when_you_re_ready_click_the_begin_session_button_to_record_your_driving_statistics_when_you_re_done_click_the_finish_session_button_to_save_your_records_you_can_always_view_your_past_and_recent_statistics_on_the_home_screen">When you\'re ready, click the Begin Session button to record your driving statistics. When you\'re done, click the Finish Session button to save your records. You can always view your past and recent statistics on the home screen.</string>
+    <string name="start_a_session">Start a Session</string>
+    <string name="start_session">Start Session</string>
+    <string name="session_in_progress">Session in Progress</string>
+    <string name="session_in_progress_spk">Session in Progress.</string>
+    <string name="speed_lbl">Speed:</string>
+    <string name="distance">Distance:</string>
+    <string name="end_session">End Session</string>
+    <string name="notice_dialog_resource">Notice</string>
+    <string name="allow_location_permissions">Allow Location Permissions</string>
+    <string name="allow_access_bttn_txt">Allow</string>
+    <string name="deny_access_bttn_txt">Deny</string>
+    <string name="the_session_has_been_terminated_and_the_information_has_been_saved">The session has been terminated, and the information has been saved.</string>
+    <string name="confirm_bttn_txt">Confirm</string>
     <!-- Strings used for fragments for navigation -->
 
 </resources>
