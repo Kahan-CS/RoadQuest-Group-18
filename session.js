@@ -1,18 +1,11 @@
 // session.js
 const express = require('express');
 const router = express.Router();
-const accountRoutes = require('./account');
+const Session = require('../models/session'); // Adjust the path based on your project structure
 
-const sessions = [];
-
-router.post('/start-session/:username', (req, res) => {
+router.post('/start-session/:username', async (req, res) => {
   const { username } = req.params;
   const { accelerometerData, manualStart } = req.body;
-
-  const userIndex = accountRoutes.users.findIndex(user => user.username === username);
-  if (userIndex === -1) {
-    return res.status(404).json({ error: 'User not found.' });
-  }
 
   const shouldStartSession =
     manualStart || (accelerometerData && checkAcceleration(accelerometerData));
@@ -21,38 +14,40 @@ router.post('/start-session/:username', (req, res) => {
     return res.status(400).json({ message: 'Session not started.' });
   }
 
-  const sessionId = sessions.length + 1;
-
-  sessions.push({
-    sessionId,
-    username,
-    feedback: '',
-    score: 0,
-    averageSpeed: 0,
-    totalSessionTime: 0,
-    distanceTravelled: 0,
-    startTime: Date.now(),
-  });
-
-  res.status(201).json({ message: 'Session started successfully.', sessionId });
+  try {
+    // Create a new session in the database
+    const newSession = await Session.create({ username, startTime: Date.now() });
+    
+    res.status(201).json({ message: 'Session started successfully.', sessionId: newSession._id });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
-router.get('/session-report/:sessionId', (req, res) => {
+
+router.get('/session-report/:sessionId', async (req, res) => {
   const { sessionId } = req.params;
-  const session = sessions.find(s => s.sessionId === Number(sessionId));
 
-  if (!session) {
-    return res.status(404).json({ error: 'Session not found.' });
+  try {
+    const session = await Session.findById(sessionId);
+
+    if (!session) {
+      return res.status(404).json({ error: 'Session not found.' });
+    }
+
+    const { averageSpeed, totalSessionTime, distanceTravelled } = calculateSessionMetrics(session);
+
+    session.averageSpeed = averageSpeed;
+    session.totalSessionTime = totalSessionTime;
+    session.distanceTravelled = distanceTravelled;
+    session.feedback = calculateFeedback(session);
+
+    res.json(session);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
-
-  const { averageSpeed, totalSessionTime, distanceTravelled } = calculateSessionMetrics(session);
-
-  session.averageSpeed = averageSpeed;
-  session.totalSessionTime = totalSessionTime;
-  session.distanceTravelled = distanceTravelled;
-  session.feedback = calculateFeedback(session);
-
-  res.json(session);
 });
 
 function checkAcceleration(accelerometerData) {
