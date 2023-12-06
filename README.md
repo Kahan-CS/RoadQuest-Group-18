@@ -6,4 +6,5 @@ NPM Project dependencies:
 
 to install:
 npm install express
-npm install  mongoose
+npm install mongoose
+npm install dotenv
