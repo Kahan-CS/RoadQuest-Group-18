@@ -46,6 +46,8 @@ class SessionMainUIScreen : AppCompatActivity(), SensorEventListener {
         endSessionBttn.setOnClickListener {
             stopCapturingSpeeds()
             val finalAverageSpeed = calculateFinalAverageSpeed(speedList)
+            // This sends the final average speed to the view sessions activity.
+            intent.putExtra("Average Speed", finalAverageSpeed)
             openDialog()
         }
 

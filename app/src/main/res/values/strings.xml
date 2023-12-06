@@ -66,6 +66,9 @@
     <string name="deny_access_bttn_txt">Deny</string>
     <string name="the_session_has_been_terminated_and_the_information_has_been_saved">The session has been terminated, and the information has been saved.</string>
     <string name="confirm_bttn_txt">Confirm</string>
+    <string name="settings_lbl_header">Settings</string>
+    <string name="settings_desc_lbl">Modify specific settings pertaining to your account, or user experience.</string>
+    <string name="these_are_the_registered_statistics_from_your_latest_driving_session">These are the registered statistics from your latest driving session</string>
     <!-- Strings used for fragments for navigation -->
 
 </resources>

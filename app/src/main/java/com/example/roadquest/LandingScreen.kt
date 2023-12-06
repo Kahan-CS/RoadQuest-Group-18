@@ -36,6 +36,21 @@ class LandingScreen : AppCompatActivity() {
             val locationMessage: String = "RideQuest needs your permission to access your device location. It is imperative that this permission is granted for the proper functioning of the software. Failure to comply with the request will disable access to system features."
             openDialog(locationMessage)
         }
+
+        // Button takes you to a new screen to view sessions:
+        val viewSessionsBttn: Button = findViewById(R.id.viewSessions)
+        viewSessionsBttn.setOnClickListener {
+            val intent = Intent(this, ViewSessionsScreen::class.java)
+            startActivity(intent)
+        }
+
+        // Button takes you to settings:
+        val settingsButton: Button = findViewById(R.id.settingsButton)
+        settingsButton.setOnClickListener {
+            val intent = Intent(this, SettingsScreen::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun openDialog(locationMessage: String?) {
